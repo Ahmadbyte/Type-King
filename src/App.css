@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+*{
+    margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    text-align: center;
+    background-color: #27374D;
+
+    min-height: 100vh;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.is-size{
+    background-color: #27374D;
+    color: #DDE6ED;
+    font-size: 30px;
+    padding: 10px 0 0 0;
+    margin: 0px;
+    border-radius: 5px;
+    /* background-color: aquamarine; */
+}
+
+
+.content{
+    background-color: #9DB2BF;
+    color: #27374D;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 100px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.highlight {
+    color: green;
+    font-size: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.word{
+    color: green;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.highlight1 {
+    color: red;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.input{
+    background-color: #9DB2BF;
+    color: #27374D;
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    padding: 10px 100px;
+    margin: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
 }
+
+.is-size-5{
+    color: #27374D;
+    font-size: 25px;
+    padding: 10px ;
+    margin: 10px 350px;
+    border-radius: 15px;
+    background-color: #9DB2BF;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.column{
+    /* background-color: #282c34; */
+    color: #DDE6ED;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.button{
+    background-color: #27374D;
+    color: #DDE6ED;
+    font-size: 17px;
+    padding: 10px 70px ;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.is-size-1{
+    color: #DDE6ED;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.desc{
+    color: grey;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+
+#keyboard {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .key {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .key:hover {
+    background-color: gray;
+    color: white;
+  }
+  
+  
