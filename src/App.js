@@ -4,24 +4,10 @@ import './App.css';
 import split from 'lodash/split'
 
 const NUMB_OF_WORDS = 200
-
+const SECONDS = 30;
 
 function App() {
-  // const SECONDS = document.getElementById("inp2").value;
-  // const UserInput = () => {
-    // const [inputValue, setInputValue] = useState();
     
-  
-    // const handleChange = (event) => {
-    //   setInputValue(event.target.value);
-    // };
-  
-    // const handleSubmit = (event) => {
-    //   event.preventDefault();
-    //   // Do something with the input value, such as sending it to an API or processing it further
-    //   console.log('Input value:', inputValue);
-    // };
-    const SECONDS = 10;
   const [words, setWords] = useState([])
   const [countDown, setCountDown] = useState(SECONDS)
   const [currInput, setCurrInput] = useState("")
@@ -118,38 +104,23 @@ function App() {
     }
   }
 
-//   function changeVal() {
-
-//     var inp2 = document.getElementById("inp2");
-//     let SECONDS = Number(inp2.value);
-    
-//     console.log("SECONDS: ", SECONDS);
-//     // globe = num1 * num2;
-//     // result.innerHTML += " The value of the global variable <b> globe </b> is changed from <b> " + prevGlobe + " </b> to <b> " + globe + " </b> the product of the two numbers <b> " + num1 + " * " + num2 + " </b> entered by you. <br> ";
-//  }
-
   return (
     <div className="App" >
       <div className="is-size">
         Time Remaining:
         <br />
-        {/* <input type = "number" id = "inp2" value='10' ></input>
-        <button id = "btn" onclick = {changeVal()}>Click</button> */}
         <div>
-      <form >
+      {/* <form >
         <label>
-          {/* Enter a value: */}
-          {/* <input type="number" value={inputValue} onChange={handleChange} /> */}
+          Enter a value:
+          <input type="number" value={inputValue} onChange={handleChange} />
         </label>
-        {/* <button type="submit" >Submit</button> */}
-      </form>
+        
+      </form> */}
     </div>
         {countDown}
       </div>
       {status === 'started' && (
-        // <div className="section" >
-        // <div className="card">
-        // <div className="card-content">
         <div className="content">
           {words.map((word, i) => (
             <span key={i} >            
@@ -217,6 +188,8 @@ function App() {
           <p className="is-size-1">
             {correct}
           </p>
+          {correct <= 10 ? ( <span  className='text'>You can do better!</span>) : ( <span className='text' >You are a Pro!</span>)}
+          <br />
           <p className="is-size-5">Accuracy:</p>
           {correct !== 0 ? (
             <p className="is-size-1">

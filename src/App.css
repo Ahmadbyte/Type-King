@@ -115,7 +115,7 @@
   .key {
     width: 40px;
     height: 40px;
-    background-color: lightgray;
+    background-color: #9DB2BF;
     border: 1px solid gray;
     margin: 5px;
     display: flex;
@@ -128,5 +128,10 @@
     background-color: gray;
     color: white;
   }
-  
-  
+  .text{
+    color: #9DB2BF;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 5px;
+    border-radius: 5px;
+  }
