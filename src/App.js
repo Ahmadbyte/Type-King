@@ -136,7 +136,7 @@ function App() {
         {/* <input type = "number" id = "inp2" value='10' ></input>
         <button id = "btn" onclick = {changeVal()}>Click</button> */}
         <div>
-      <form onSubmit={handleSubmit}>
+      <form >
         <label>
           {/* Enter a value: */}
           {/* <input type="number" value={inputValue} onChange={handleChange} /> */}
