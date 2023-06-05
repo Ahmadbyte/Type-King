@@ -9,18 +9,18 @@ const NUMB_OF_WORDS = 200
 function App() {
   // const SECONDS = document.getElementById("inp2").value;
   // const UserInput = () => {
-    const [inputValue, setInputValue] = useState();
+    // const [inputValue, setInputValue] = useState();
     
   
-    const handleChange = (event) => {
-      setInputValue(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //   setInputValue(event.target.value);
+    // };
   
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Do something with the input value, such as sending it to an API or processing it further
-      console.log('Input value:', inputValue);
-    };
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   // Do something with the input value, such as sending it to an API or processing it further
+    //   console.log('Input value:', inputValue);
+    // };
     const SECONDS = 10;
   const [words, setWords] = useState([])
   const [countDown, setCountDown] = useState(SECONDS)
@@ -139,7 +139,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <label>
           {/* Enter a value: */}
-          <input type="number" value={inputValue} onChange={handleChange} />
+          {/* <input type="number" value={inputValue} onChange={handleChange} /> */}
         </label>
         {/* <button type="submit" >Submit</button> */}
       </form>
