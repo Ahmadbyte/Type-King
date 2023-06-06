@@ -5,9 +5,23 @@
 .App{
     text-align: center;
     background-color: #27374D;
-
+    
     min-height: 100vh;
 
+}
+
+@media (max-width: 767px) {
+  /* Add your CSS rules for mobile here */
+}
+
+/* Styles for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Add your CSS rules for tablets here */
+}
+
+/* Styles for desktop */
+@media (min-width: 1024px) {
+  /* Add your CSS rules for desktop here */
 }
 
 .is-size{
