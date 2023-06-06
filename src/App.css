@@ -10,19 +10,31 @@
 
 }
 
+/* Styles for mobile devices */
 @media (max-width: 767px) {
-  /* Add your CSS rules for mobile here */
+  .container {
+    width: 100%;
+  }
 }
 
 /* Styles for tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Add your CSS rules for tablets here */
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
 
 /* Styles for desktop */
 @media (min-width: 1024px) {
-  /* Add your CSS rules for desktop here */
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
+
 
 .is-size{
     background-color: #27374D;
