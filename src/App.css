@@ -51,6 +51,7 @@
     background-color: #9DB2BF;
     color: #27374D;
     font-size: 18px;
+    margin: auto;
     padding: 10px;
     margin: 10px 100px;
     border-radius: 15px;
@@ -58,16 +59,13 @@
 }
 
 .highlight {
-    color: green;
-    font-size: 20px;
+    color: black;
+    font-size: 23px;
   }
 
 .word{
     color: green;
 }
-.highlight1 {
-    color: red;
-  }
 
 .input{
     background-color: #9DB2BF;
@@ -102,6 +100,7 @@
 
 .button{
     background-color: #27374D;
+    cursor: pointer;
     color: #DDE6ED;
     font-size: 17px;
     padding: 10px 70px ;

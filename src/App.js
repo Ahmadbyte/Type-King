@@ -1,15 +1,27 @@
-import { useState, useEffect, useRef } from 'react'
-import randomWords from 'random-words'
+import { useState, useEffect, useRef } from 'react';
+import randomWords from 'random-words';
 import './App.css';
-import split from 'lodash/split'
+// import split from 'lodash/split';
+import React from 'react';
+
+
+
+
+
+
+
+
 
 const NUMB_OF_WORDS = 200
-const SECONDS = 30;
+
+
 
 function App() {
-    
+
   const [words, setWords] = useState([])
-  const [countDown, setCountDown] = useState(SECONDS)
+
+  const [SECONDS, setSECONDS] = useState(10)
+  const [countDown, setCountDown] = useState(10)
   const [currInput, setCurrInput] = useState("")
   const [currWordIndex, setCurrWordIndex] = useState(0)
   const [currCharIndex, setCurrCharIndex] = useState(-1)
@@ -18,7 +30,9 @@ function App() {
   const [incorrect, setIncorrect] = useState(0)
   const [status, setStatus] = useState("waiting")
   const textInput = useRef(null)
-  
+  const [match, setMatch] = useState(false);
+  const [wordCorrect, setWordCorrect] = useState("");
+
   useEffect(() => {
     setWords(generateWords())
   }, [])
@@ -28,6 +42,16 @@ function App() {
       textInput.current.focus()
     }
   }, [status])
+
+  const handleTimingSelection = (event) => {
+    event.preventDefault();
+    const timing = document.getElementById('num').value;
+
+    console.log('Selected timing:', timing);
+    setSECONDS(timing);
+    setCountDown(timing);
+
+  };
 
   function generateWords() {
     return new Array(NUMB_OF_WORDS).fill(null).map(() => randomWords())
@@ -63,13 +87,13 @@ function App() {
   }
 
   function handleKeyDown({ keyCode, key }) {
-    // space bar 
+
     if (keyCode === 32) {
       checkMatch()
       setCurrInput("")
       setCurrWordIndex(currWordIndex + 1)
       setCurrCharIndex(-1)
-      // backspace
+
     } else if (keyCode === 8) {
       setCurrCharIndex(currCharIndex - 1)
       setCurrChar("")
@@ -84,12 +108,16 @@ function App() {
     const doesItMatch = wordToCompare === currInput.trim()
     if (doesItMatch) {
       setCorrect(correct + 1);
+      setMatch(true);
+      setWordCorrect("Correct");
 
-    } else {
+    }
+    else {
       setIncorrect(incorrect + 1);
+      setMatch(false);
+      setWordCorrect("Incorrect");
     }
   }
-
   function getCharClass(wordIdx, charIdx, char) {
     if (wordIdx === currWordIndex && charIdx === currCharIndex && currChar && status !== 'finished') {
       if (char === currChar) {
@@ -103,39 +131,68 @@ function App() {
       return ''
     }
   }
+  function keyHighlight(event) {
+
+    const currKey = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log(currKey);
+
+    if (currKey >= 'a' && currKey <= 'z') {
+      const keys = document.querySelectorAll(".key");
+      keys.forEach(key => { key.style.backgroundColor = "#9DB2BF"; });
+      const k = document.getElementById(currKey);
+      k.style.backgroundColor = "pink";
+
+      let a = setTimeout(() => {
+        k.style.backgroundColor = "#9DB2BF";
+      }, 1000);
+      
+    }
+
+  }
+
+  function handleEvent(event) {
+    handleKeyDown(event);
+    keyHighlight(event);
+  }
 
   return (
     <div className="App" >
-      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
       <div className="is-size">
         Time Remaining:
         <br />
-        <div>
-      {/* <form >
-        <label>
-          Enter a value:
-          <input type="number" value={inputValue} onChange={handleChange} />
-        </label>
-        
-      </form> */}
-    </div>
         {countDown}
+      </div>
+      <div>
+
+        <form onSubmit={handleTimingSelection}>
+          <label>Timing Selection in Seconds: </label>
+          <input type='number' id='num' />
+          <button type="submit">Submit</button>
+        </form>
+
+
+      </div>
+      <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
+        <br />
+        {wordCorrect}
       </div>
       {status === 'started' && (
         <div className="content">
           {words.map((word, i) => (
-            <span key={i} >            
+            <span key={i} >
+
               {i === currWordIndex && (
-                <span className='highlight'>                
-                  {word.slice(0)}
-                  <div className="highlight">
-                  {split(word,'')[currCharIndex] && split(word, '')[currCharIndex]}                
-                </div>
+                <span >
+                  {/* {word.slice(0)} */}
+                  {/* <div className='highlight'> */}
+                  {/* {split(word, '')[currCharIndex] && split(word, '')[currCharIndex]} */}
+                  {/* </div> */}
                 </span>
-              )}  
+              )}
               <span >
                 {word.split("").map((char, idx) => (
-                  <span className={getCharClass(i, idx, char)} key={idx}>{char}</span>
+                  <span className={getCharClass(i, idx, char)} key={idx} >{char}</span>
+
                 ))}
               </span>
               <span> </span>
@@ -143,43 +200,43 @@ function App() {
           ))}
         </div>
       )}
-      <input ref={textInput} disabled={status !== "started"} type="text" className="input" onKeyDown={handleKeyDown} value={currInput} onChange={(e) => setCurrInput(e.target.value)} />
+      <input ref={textInput} disabled={status !== "started"} type="text" className="input" onKeyDown={handleEvent} value={currInput} onChange={(e) => setCurrInput(e.target.value)} />
       <br />
       <button className="button" onClick={start}>
         Start
       </button>
       <div id="keyboard">
         <div class="row">
-          <div class="key">Q</div>
-          <div class="key">W</div>
-          <div class="key">E</div>
-          <div class="key">R</div>
-          <div class="key">T</div>
-          <div class="key">Y</div>
-          <div class="key">U</div>
-          <div class="key">I</div>
-          <div class="key">O</div>
-          <div class="key">P</div>
+          <div class="key q" id='q'>Q</div>
+          <div class="key w" id='w'>W</div>
+          <div class="key e" id='e'>E</div>
+          <div class="key r" id='r'>R</div>
+          <div class="key t" id='t'>T</div>
+          <div class="key y" id='y'>Y</div>
+          <div class="key u" id='u'>U</div>
+          <div class="key i" id='i'>I</div>
+          <div class="key o" id='o'>O</div>
+          <div class="key p" id='p'>P</div>
         </div>
         <div class="row">
-          <div class="key">A</div>
-          <div class="key">S</div>
-          <div class="key">D</div>
-          <div class="key">F</div>
-          <div class="key">G</div>
-          <div class="key">H</div>
-          <div class="key">J</div>
-          <div class="key">K</div>
-          <div class="key">L</div>
+          <div class="key a" id='a'>A</div>
+          <div class="key s" id='s'>S</div>
+          <div class="key d" id='d'>D</div>
+          <div class="key f" id='f'>F</div>
+          <div class="key g" id='g'>G</div>
+          <div class="key h" id='h'>H</div>
+          <div class="key j" id='j'>J</div>
+          <div class="key k" id='k'>K</div>
+          <div class="key l" id='l'> L</div>
         </div>
         <div class="row">
-          <div class="key">Z</div>
-          <div class="key">X</div>
-          <div class="key">C</div>
-          <div class="key">V</div>
-          <div class="key">B</div>
-          <div class="key">N</div>
-          <div class="key">M</div>
+          <div class="key z" id='z'>Z</div>
+          <div class="key x" id='x'>X</div>
+          <div class="key c" id='c'>C</div>
+          <div class="key v" id='v'>V</div>
+          <div class="key b" id='b'>B</div>
+          <div class="key n" id='n'>N</div>
+          <div class="key m" id='m'>M</div>
         </div>
       </div>
 
@@ -189,7 +246,7 @@ function App() {
           <p className="is-size-1">
             {correct}
           </p>
-          {correct <= 10 ? ( <span  className='text'>You can do better!</span>) : ( <span className='text' >You are a Pro!</span>)}
+          {correct <= 10 ? (<span className='text'>You can do better!</span>) : (<span className='text' >You are a Pro!</span>)}
           <br />
           <p className="is-size-5">Accuracy:</p>
           {correct !== 0 ? (
@@ -201,7 +258,7 @@ function App() {
           )}
         </div>
       )}
-      <span className="desc">Type King for Chaabi by:<br/>Sharique Ahmad</span>
+      <span className="desc">Type King for Chaabi by:<br />Sharique Ahmad</span>
     </div>
   );
 }
