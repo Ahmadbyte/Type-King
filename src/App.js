@@ -1,27 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import randomWords from 'random-words';
 import './App.css';
-// import split from 'lodash/split';
 import React from 'react';
-
-
-
-
-
-
-
-
+import split from 'lodash/split';
+// import { toBeVisible } from '@testing-library/jest-dom/matchers';
 
 const NUMB_OF_WORDS = 200
-
-
 
 function App() {
 
   const [words, setWords] = useState([])
 
-  const [SECONDS, setSECONDS] = useState(10)
-  const [countDown, setCountDown] = useState(10)
+  const [SECONDS, setSECONDS] = useState()
+  const [countDown, setCountDown] = useState()
   const [currInput, setCurrInput] = useState("")
   const [currWordIndex, setCurrWordIndex] = useState(0)
   const [currCharIndex, setCurrCharIndex] = useState(-1)
@@ -32,6 +23,8 @@ function App() {
   const textInput = useRef(null)
   const [match, setMatch] = useState(false);
   const [wordCorrect, setWordCorrect] = useState("");
+  const [currWord , setCurrWord] = useState();
+  const [timeR,setTimeR] = useState("");
 
   useEffect(() => {
     setWords(generateWords())
@@ -46,11 +39,9 @@ function App() {
   const handleTimingSelection = (event) => {
     event.preventDefault();
     const timing = document.getElementById('num').value;
-
-    console.log('Selected timing:', timing);
     setSECONDS(timing);
-    setCountDown(timing);
-
+    setCountDown(timing);  
+    setTimeR("Time Remaining:")
   };
 
   function generateWords() {
@@ -140,11 +131,11 @@ function App() {
       const keys = document.querySelectorAll(".key");
       keys.forEach(key => { key.style.backgroundColor = "#9DB2BF"; });
       const k = document.getElementById(currKey);
-      k.style.backgroundColor = "pink";
+      k.style.backgroundColor= "#F5F5F5" ;
 
-      let a = setTimeout(() => {
-        k.style.backgroundColor = "#9DB2BF";
-      }, 1000);
+      // let a = setTimeout(() => {
+      //   k.style.backgroundColor = "#9DB2BF";
+      // }, 1000);
       
     }
 
@@ -158,49 +149,55 @@ function App() {
   return (
     <div className="App" >
       <div className="is-size">
-        Time Remaining:
+        {timeR}
         <br />
         {countDown}
       </div>
-      <div>
-
+      <div id='timeSelect' >
         <form onSubmit={handleTimingSelection}>
-          <label>Timing Selection in Seconds: </label>
-          <input type='number' id='num' />
-          <button type="submit">Submit</button>
+          <label className='clr'>Select Time: </label>
+          <select className='clr1' id='num' >
+            <option value='30'>30 sec</option>
+            <option value='60'>1 min</option>
+            <option value='120'>2 min</option>
+            <option value='180'>3 min</option>
+            <option value='300'>5 min</option>
+          </select>
+          {/* <input className="input1" type='number' id='num' /> */}
+          <br />
+          <button className="button1"  type="submit">Submit</button>
         </form>
 
 
       </div>
       <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
-        <br />
+        
         {wordCorrect}
       </div>
       {status === 'started' && (
         <div className="content">
           {words.map((word, i) => (
-            <span key={i} >
-
-              {i === currWordIndex && (
-                <span >
-                  {/* {word.slice(0)} */}
-                  {/* <div className='highlight'> */}
-                  {/* {split(word, '')[currCharIndex] && split(word, '')[currCharIndex]} */}
-                  {/* </div> */}
-                </span>
-              )}
+            <span key={i} >           
               <span >
                 {word.split("").map((char, idx) => (
                   <span className={getCharClass(i, idx, char)} key={idx} >{char}</span>
-
-                ))}
+                  ))}
+                  {i === currWordIndex && (
+                <span >
+                  {/* {word} */}
+                  <div className='highlight'>
+                  {word}     
+                  </div>
+                </span>
+              )}
               </span>
               <span> </span>
+              
             </span>
           ))}
         </div>
       )}
-      <input ref={textInput} disabled={status !== "started"} type="text" className="input" onKeyDown={handleEvent} value={currInput} onChange={(e) => setCurrInput(e.target.value)} />
+      <input ref={textInput} disabled={status !== "started"} type="text" className="input" onKeyDownCapture={handleEvent} value={currInput} onChange={(e) => setCurrInput(e.target.value)} />
       <br />
       <button className="button" onClick={start}>
         Start
