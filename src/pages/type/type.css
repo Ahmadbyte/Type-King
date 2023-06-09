@@ -1,0 +1,172 @@
+*{
+    margin: auto;
+}
+
+.App{
+    text-align: center;
+    /* background-color: #27374D; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://media.istockphoto.com/id/862672018/photo/top-view-of-office-desk-on-wooden-background.jpg?s=170667a&w=0&k=20&c=LJAp6v3HpK8hpWjnPPMj7XjMhzJdj70zZHS7SruSgOw='); 
+    min-height: 100vh;
+    overflow: auto;
+
+}
+
+.is-size{
+    /* background-color: #27374D; */
+    color: #27374D;
+    font-size: 30px;
+    padding: 1px 0 0 0;
+    margin: auto;
+    border-radius: 5px;
+   
+}
+.clr{
+    /* background-color: #27374D; */
+    color: #27374D;
+    font-size: 19px;
+    padding: 1px 2px 0 1px;
+    margin: 0;
+    border-radius: 5px;
+   
+}
+
+.clr1{
+    background-color: #9DB2BF;
+    color: #27374D;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    padding: 1px 0;
+    margin: 1px 1px;
+    border-radius: 9px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.button1{
+    background-color: #27374D;
+    cursor: pointer;
+    color: #DDE6ED;
+    font-size: 17px;
+    padding: 10px 40px ;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.content{
+    background-color: #9DB2BF;
+    color: #27374D;
+    font-size: 24px;
+    margin: 10px 150px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+    /* height: 100px; */
+    /* overflow: hidden; */
+    
+}
+
+.highlight {
+    color: #27374D;
+    background-color: rgb(167, 233, 167);
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 23px;
+  }
+
+.input{
+    background-color: #9DB2BF;
+    color: #27374D;
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    padding: 10px 100px;
+    margin: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.is-size-5{
+    color: #27374D;
+    font-size: 25px;
+    padding: 10px ;
+    margin: 10px 350px;
+    border-radius: 15px;
+    background-color: #9DB2BF;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.column{
+   
+    color: #DDE6ED;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.button{
+    background-color: #27374D;
+    cursor: pointer;
+    color: #DDE6ED;
+    font-size: 17px;
+    padding: 10px 70px ;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5px 0.25px #282c34;
+}
+
+.is-size-1{
+    color: #27374D;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.desc{
+    color: #27374D;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+
+#keyboard {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .key {
+    width: 40px;
+    height: 40px;
+    background-color: #9DB2BF;
+    border: 1px solid gray;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .key:hover {
+    background-color: gray;
+    color: white;
+  }
+  .text{
+    color: #27374D;
+    font-size: 25px;
+    padding: 1px 0 0 0;
+    margin: 5px;
+    border-radius: 5px;
+  }
