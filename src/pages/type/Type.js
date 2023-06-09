@@ -21,7 +21,6 @@ function Type() {
   const textInput = useRef(null)
   const [match, setMatch] = useState(false);
   const [wordCorrect, setWordCorrect] = useState("");
-  // const [currWord , setCurrWord] = useState();
   // const [timeR,setTimeR] = useState("");
 
   useEffect(() => {
@@ -38,7 +37,7 @@ function Type() {
     event.preventDefault();
     const timing = document.getElementById('num').value;
     setSECONDS(timing);
-    setCountDown(timing);  
+    setCountDown(timing);
     // setTimeR("Time Remaining:")
   };
 
@@ -74,6 +73,10 @@ function Type() {
     }
 
   }
+
+  const stop = () => {
+    window.location.href = '/type';
+  };
 
   function handleKeyDown({ keyCode, key }) {
 
@@ -129,12 +132,12 @@ function Type() {
       const keys = document.querySelectorAll(".key");
       keys.forEach(key => { key.style.backgroundColor = "#9DB2BF"; });
       const k = document.getElementById(currKey);
-      k.style.backgroundColor= "#F5F5F5" ;
+      k.style.backgroundColor = "#F5F5F5";
 
       setTimeout(() => {
         k.style.backgroundColor = "#9DB2BF";
       }, 1000);
-      
+
     }
 
   }
@@ -152,10 +155,11 @@ function Type() {
         {countDown}
       </div>
       <div id='timeSelect' >
-        
-          <label className='clr'>Select Time: </label>
-          <form onSubmit={handleTimingSelection}>
+
+        <label className='clr'>Select Time: </label>
+        <form onChange={handleTimingSelection}>
           <select className='clr1' id='num' >
+            <option value='10'>10 sec</option>
             <option value='30'>30 sec</option>
             <option value='60'>1 min</option>
             <option value='120'>2 min</option>
@@ -163,42 +167,40 @@ function Type() {
             <option value='300'>5 min</option>
           </select>
           {/* <input className="input1" type='number' id='num' /> */}
-          <br />
-          <button className="button1"  type="submit">Submit</button>
+
         </form>
 
 
       </div>
       <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
-        
+
         {wordCorrect}
       </div>
       {status === 'started' && (
         <div className="content">
           {words.map((word, i) => (
-            <span key={i} >           
+            <span key={i} >
               <span >
                 {word.split("").map((char, idx) => (
                   <span className={getCharClass(i, idx, char)} key={idx} >{char}</span>
-                  ))}
-                  {i === currWordIndex && (
-                <span >
-                  {/* {word} */}
-                  <div className='highlight'>
-                  {word}     
-                  </div>
-                </span>
-              )}
+                ))}
+                {i === currWordIndex && (
+                  <span >
+                    {/* {word} */}
+                    <div className='highlight'>
+                      {word}
+                    </div>
+                  </span>
+                )}
               </span>
               <span> </span>
-              
+
             </span>
           ))}
         </div>
       )}
       <input ref={textInput} disabled={status !== "started"} type="text" className="input" onKeyDownCapture={handleEvent} value={currInput} onChange={(e) => setCurrInput(e.target.value)} />
       <br />
-      
       <div id="keyboard">
         <div class="row">
           <div class="key q" id='q'>Q</div>
@@ -236,6 +238,9 @@ function Type() {
       <button className="button" onClick={start}>
         Start
       </button>
+      <button className="button" onClick={stop}>
+        Stop
+      </button>
       {status === 'finished' && (
         <div className="columns">
           <p className="is-size-5">Words per minute:</p>
@@ -254,7 +259,7 @@ function Type() {
           )}
         </div>
       )}
-      <span className="desc"><br/>Type King for Chaabi by:<br />Sharique Ahmad</span>
+      <span className="desc"><br />Type King for Chaabi by:<br />Sharique Ahmad</span>
     </div>
   );
 }
