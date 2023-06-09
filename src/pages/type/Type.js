@@ -22,7 +22,7 @@ function Type() {
   const [match, setMatch] = useState(false);
   const [wordCorrect, setWordCorrect] = useState("");
   // const [currWord , setCurrWord] = useState();
-  const [timeR,setTimeR] = useState("");
+  // const [timeR,setTimeR] = useState("");
 
   useEffect(() => {
     setWords(generateWords())
@@ -39,7 +39,7 @@ function Type() {
     const timing = document.getElementById('num').value;
     setSECONDS(timing);
     setCountDown(timing);  
-    setTimeR("Time Remaining:")
+    // setTimeR("Time Remaining:")
   };
 
   function generateWords() {
@@ -147,13 +147,14 @@ function Type() {
   return (
     <div className="App" >
       <div className="is-size">
-        {timeR}
+        <span>Time Remaining</span>
         <br />
         {countDown}
       </div>
       <div id='timeSelect' >
-        <form onSubmit={handleTimingSelection}>
+        
           <label className='clr'>Select Time: </label>
+          <form onSubmit={handleTimingSelection}>
           <select className='clr1' id='num' >
             <option value='30'>30 sec</option>
             <option value='60'>1 min</option>
