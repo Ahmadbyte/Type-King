@@ -3,6 +3,19 @@
 
 => About:-Type King is a React-based typing game where users can test and improve their typing skills. The game presents a series of random words, and the user needs to type them correctly within a specified time limit. This game helps to improve the typing speed of the user it enhances the typing speed. 
 
+## Here is my Github Link for King Type:
+
+=> {https://github.com/Ahmadbyte/Type-King.git} => Time to time making commit and pushed in the repo.
+Created this project and imported every depedencies, Git init then git add . it will add all the file the git commit then made a main branch and then Git push .....This how i pushed my project into Git hub repo.
+
+## Here is my Project Deployed Link for King Type on onrender.com:
+
+=> Then i deployed my project: {Type King} using {onrender.com}.
+Here first i have added my project into Github as i explained before then i gave permission to onrender.com to read my project Type King repo and then from onrender.com i deployed my project.
+
+=> Here is my Deployed Project Link:
+{https://typeking-f2fr.onrender.com}...Here everyone can have access to my project {Type King}.
+
 ## Project building start..
 
 => First of all i created the file with the following:
@@ -52,6 +65,10 @@ and then {Submit} button to submit the time they have selected.
 => Created a {Timing} options which allows users to select the game duration (30 seconds, 1 minute, 2 minutes, 3 minutes, or 5 minutes).
 
 => Installed {“react-router-dom”} which helps to enables you to implement dynamic routing in a web app.
+
+=> Used {OnClick} on buttons which can be clicked to navigate to the desired path.
+
+=> Added Start and Stop button in the Typing Test page, which on clicking start it will start the test and on clicking stop it will stop the test.
 
 => Used a {Countdown} function which start the countdoWn for the time which user has selected 	    for the Test.
 
@@ -103,18 +120,10 @@ and then {Submit} button to submit the time they have selected.
 
 5. Open your browser and visit `http://localhost:3000` to access the application.
 
-6.Now u can see the project “Type King” and can test ur Typing Skills.
+6. Now u can see the project “Type King” and can test ur Typing Skills.
+
+................................................................
+
+==> {Enjoy the documentation for Type King and Type King itself! Thank You! } <==  
 
 
-## Here is my Github Link for King Type:
-
-=> {https://github.com/Ahmadbyte/Type-King.git} => Time to time making commit and pushed in the repo.
-Created this project and imported every depedencies, Git init then git add . it will add all the file the git commit then made a main branch and then Git push .....This how i pushed my project into Git hub repo.
-
-## Here is my Project Deployed Link for King Type on onrender.com:
-
-=> Then i deployed my project: {Type King} using {onrender.com}.
-Here first i have added my project into Github as i explained before then i gave permission to onrender.com to read my project Type King repo and then from onrender.com i deployed my project.
-
-=> Here is my Deployed Project Link:
-{https://typeking-f2fr.onrender.com}...Here everyone can have access to my project {Type King}.

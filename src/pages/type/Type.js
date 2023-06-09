@@ -71,11 +71,12 @@ function Type() {
         })
       }, 1000)
     }
-
   }
 
   const stop = () => {
-    window.location.href = '/type';
+    setStatus('finished')
+    setCurrInput("")
+    setCountDown(0);
   };
 
   function handleKeyDown({ keyCode, key }) {
