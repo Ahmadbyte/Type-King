@@ -14,7 +14,7 @@ Created this project and imported every depedencies, Git init then git add . it 
 Here first i have added my project into Github as i explained before then i gave permission to onrender.com to read my project Type King repo and then from onrender.com i deployed my project.
 
 => Here is my Deployed Project Link:
-{https://typeking-f2fr.onrender.com}...Here everyone can have access to my project {Type King}.
+{https://typeking-f2fr.onrender.com} Here everyone can have access to my project {Type King}.
 
 ## Project building start..
 
