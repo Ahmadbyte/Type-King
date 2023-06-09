@@ -1,1 +1,0 @@
-Firstly open the site 
