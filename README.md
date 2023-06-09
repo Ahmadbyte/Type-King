@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Type King:
 
 firstly i created the file with the following:
@@ -12,3 +13,6 @@ Then i created the secong page named:
 {Typing Page} in which user can start there typing test
 
 This typing page will contain the 
+=======
+Firstly open the site 
+>>>>>>> origin/main
