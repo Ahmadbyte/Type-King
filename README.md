@@ -5,7 +5,7 @@
 
 ## Here is my Github Link for King Type:
 
-=> {https://github.com/Ahmadbyte/Type-King.git} => Time to time making commit and pushed in the repo.
+=> "https://github.com/Ahmadbyte/Type-King.git" => Time to time making commit and pushed in the repo.
 Created this project and imported every depedencies, Git init then git add . it will add all the file the git commit then made a main branch and then Git push .....This how i pushed my project into Git hub repo.
 
 ## Here is my Project Deployed Link for King Type on onrender.com:
@@ -15,7 +15,7 @@ Here first i have added my project into Github as i explained before then i gave
 
 # Here is my Deployed Project Link:
 
-=> {https://typeking-f2fr.onrender.com} => Here everyone can have access to my project {Type King}.
+=> "https://typeking-f2fr.onrender.com" => Here everyone can have access to my project {Type King}.
 
 ## Project building start..
 
