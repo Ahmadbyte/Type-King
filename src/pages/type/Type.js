@@ -36,8 +36,10 @@ function Type() {
   const handleTimingSelection = (event) => {
     event.preventDefault();
     const timing = document.getElementById('num').value;
+    if(timing != null) {
     setSECONDS(timing);
     setCountDown(timing);
+    }
     // setTimeR("Time Remaining:")
   };
 
@@ -60,7 +62,7 @@ function Type() {
       setStatus('started')
       let interval = setInterval(() => {
         setCountDown((prevCountdown) => {
-          if (prevCountdown === 0) {
+          if (prevCountdown <= 0) {
             clearInterval(interval)
             setStatus('finished')
             setCurrInput("")
@@ -160,6 +162,7 @@ function Type() {
         <label className='clr'>Select Time: </label>
         <form onChange={handleTimingSelection}>
           <select className='clr1' id='num' >
+            <option ></option>
             <option value='10'>10 sec</option>
             <option value='30'>30 sec</option>
             <option value='60'>1 min</option>
