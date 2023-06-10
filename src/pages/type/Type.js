@@ -36,10 +36,8 @@ function Type() {
   const handleTimingSelection = (event) => {
     event.preventDefault();
     const timing = document.getElementById('num').value;
-    if(timing != null) {
     setSECONDS(timing);
     setCountDown(timing);
-    }
     // setTimeR("Time Remaining:")
   };
 
@@ -158,11 +156,10 @@ function Type() {
         {countDown}
       </div>
       <div id='timeSelect' >
-
         <label className='clr'>Select Time: </label>
         <form onChange={handleTimingSelection}>
           <select className='clr1' id='num' >
-            <option ></option>
+            <option>select</option>
             <option value='10'>10 sec</option>
             <option value='30'>30 sec</option>
             <option value='60'>1 min</option>
@@ -170,14 +167,10 @@ function Type() {
             <option value='180'>3 min</option>
             <option value='300'>5 min</option>
           </select>
-          {/* <input className="input1" type='number' id='num' /> */}
-
         </form>
-
-
       </div>
-      <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
 
+      <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
         {wordCorrect}
       </div>
       {status === 'started' && (
