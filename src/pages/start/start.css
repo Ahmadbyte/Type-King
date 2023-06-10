@@ -36,7 +36,7 @@
 }
 
 .txt2{
-    color: #4e6b7e;
+    color: #264c64;
     font-size: 30px;
     font-style: italic;
     text-align: center;
@@ -47,15 +47,12 @@
 }
 
 .btn{
-    background-color: rgb(231, 177, 111);
+    background-color: #27374D;
     cursor: pointer;
-    /* justify-items: center; */
     color: #DDE6ED;
     font-size: 17px;
     padding: 10px 40px ;
-    /* margin: 0px 0px 0px 0px; */
+    margin: 10px;
     border-radius: 15px;
-    /* margin-right: 50px;
-    margin-inline: 50px; */
     box-shadow: 0 0 0.5px 0.25px #282c34;
 }

@@ -11,9 +11,11 @@ export default function Login ()  {
         <span className='txt'>Type King
         <br />
         <h6 className='txt2'>Test your typing speed..</h6>
+        <Link to="/type" style={{ textDecoration: "none" }}>
         <button className='btn' >
-        <Link to="/type" style={{ textDecoration: "none" }}>Start the Test</Link>
+        <>Start the Test</>
         </button>
+        </Link>
         </span>
         
       </div>

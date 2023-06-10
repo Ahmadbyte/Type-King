@@ -1,7 +1,7 @@
 
 # Type King: My Typing Test Project...
 
-=> About:-Type King is a React-based typing game where users can test and improve their typing skills. The game presents a series of random words, and the user needs to type them correctly within a specified time limit. This game helps to improve the typing speed of the user it enhances the typing speed. 
+=> About:- Type King is a React-based typing game where users can test and improve their typing skills. The game presents a series of random words, and the user needs to type them correctly within a specified time limit. This game helps to improve the typing speed of the user it enhances the typing speed. 
 
 ## Here is my Github Link for King Type:
 
@@ -19,7 +19,7 @@ Here first i have added my project into Github as i explained before then i gave
 
 ## Project building start..
 
-=> First of all i created the file with the following:
+=> First of all i created the app with the following:
 {npx-create-react-app touch-typing-app}
 
 => Then created the two pages named are:
@@ -32,27 +32,29 @@ Here first i have added my project into Github as i explained before then i gave
 => Also added {background image} in Start page.
 
 => Then i created the second page named:
-{Typing Page} in which user can start there typing test
+{Typing Page} in which user can start there typing test.
 
-=> This {Typing Page} will contain the time selection option in which user can select different time
+=> Then inside the typing test page this page contains: 
+{Timer} logic in which user can select the time as per users choice.
+
+=> This {Typing Page} contain the {time} selection option in which user can select different time
 and then {Submit} button to submit the time they have selected.
 
 => Then i created a {Start} button and on clicking the start button will redirect them to the start page in which they can start the test.
 
 => Now click the start button which will redirect them to the typing test page.
 
-=> Then inside the typing test page this page contains: 
-{Timer} logic in which user can select the time as per users choice.
+=> Also added the {Stop} button this is so useful because when user has choosen like 5 min timeout and in between they got to go for some work or anything and they want to stop the test then they can click the stop button and it will redirect them to the start page.
 
 => Created a {Timer} which will show the time left for the typing test.
 
-=> Next on same page there i created a random words generator, where users can see the words and type those word and even added the highlighter on the current words which will make user to see properly and can type fastly.
+=> Next on same page there i created a random words generator, where users can see the words and type those word and even added the highlighter on the current words which will make user to see properly and can type faster.
 
 => Next i created the input box where user can type the words and then i created the logic in which   when user type the correct word then the word will be highlighted in green color which will write {correct} in green color and when user type the wrong word then the word will be highlighted in red color which will write {Incorrect} in red color.
 
 => Next i created a keyboard in which user when they start typing the words then the key of the keyboard will highlight which shows them that they are typing correctly.
 
-=> Now when user has completed the Typing Test then it will redirect them to the page where users can see there scores like they can see there words per minute types and Accuracy of the typing tests.
+=> Now when user has completed the Typing Test then it will redirect them to the page where users can see there scores like they can see there {Words per minute} types and {Accuracy} of the typing tests.
 
 => Also added background image in {Test Page}.
 
@@ -69,7 +71,7 @@ and then {Submit} button to submit the time they have selected.
 
 => Used {OnClick} on buttons which can be clicked to navigate to the desired path.
 
-=> Added Start and Stop button in the Typing Test page, which on clicking start it will start the test and on clicking stop it will stop the test.
+=> Added {Start} and {Stop} button in the Typing Test page, which on clicking start it will start the test and on clicking stop it will stop the test and redirect to the start-typing page {./type}.
 
 => Used a {Countdown} function which start the countdoWn for the time which user has selected 	    for the Test.
 
@@ -77,7 +79,7 @@ and then {Submit} button to submit the time they have selected.
 
 => Displays a {Virtual keyboard} for easy typing interaction => In this i made a logic which when typing certain words then the key-board key colour will change to white colour which shows that person is typing correctly or not.They can type without looking into keyboard as in virtual keyboard the key turns to white while typing certain letters.
 
-=> Tracks the user's {accuracy} and words per minute (WPM) upon completion of the game.Users 	      can see their performance after finishing the test.They can see there Word typed per minute and also their Accuracy.
+=> Tracks the user's {Accuracy} and {Words per minute (WPM)} upon completion of the game.Users 	      can see their performance after finishing the test.They can see there Word typed per minute and also their Accuracy.
 
 
 ## Steps for pushing the project into Github:-
@@ -101,7 +103,7 @@ and then {Submit} button to submit the time they have selected.
 
 1. First u have to install {npm install -g serve} which will install the serve package globally.
 
-2. Then u have to type {npm run build} which will create a build folder with a production build of ur app.
+2. Then u have to type {npm run build} which will create a build folder for a production build of ur app.
 
 
 ## Installation :- For other to use this website the steps to open this project are=>
