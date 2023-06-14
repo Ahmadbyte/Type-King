@@ -130,7 +130,7 @@ function Type() {
 
   return (
     <div className="App" >
-      <div className="is-size">
+      <div className="heading">
         <span>Time Remaining</span>
         <br />
         {countDown}
@@ -150,7 +150,7 @@ function Type() {
         </form>
       </div>
 
-      <div className="is-size" style={{ color: match ? 'green' : 'red' }}>
+      <div className="heading" style={{ color: match ? 'green' : 'red' }}>
         {wordCorrect}
       </div>
       {status === 'started' && (
@@ -170,6 +170,7 @@ function Type() {
                 )}
               </span>
               <span> </span>
+
             </span>
           ))}
         </div>
@@ -218,19 +219,19 @@ function Type() {
       </button>
       {status === 'finished' && (
         <div className="columns">
-          <p className="is-size-5">Words per minute:</p>
-          <p className="is-size-1">
+          <p className="titled">Words per minute:</p>
+          <p className="info">
             {correct}
           </p>
           {correct <= 10 ? (<span className='text'>You can do better!</span>) : (<span className='text' >You are a Pro!</span>)}
           <br />
-          <p className="is-size-5">Accuracy:</p>
+          <p className="titled">Accuracy:</p>
           {correct !== 0 ? (
-            <p className="is-size-1">
+            <p className="info">
               {Math.round((correct / (correct + incorrect)) * 100)}%
             </p>
           ) : (
-            <p className="is-size-1">0%</p>
+            <p className="info">0%</p>
           )}
         </div>
       )}

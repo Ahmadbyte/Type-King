@@ -13,7 +13,7 @@
 
 }
 
-.is-size{
+.heading{
     /* background-color: #27374D; */
     color: #212d3e;
     font-size: 30px;
@@ -89,7 +89,7 @@
     box-shadow: 0 0 0.5px 0.25px #282c34;
 }
 
-.is-size-5{
+.titled{
     color: #27374D;
     font-size: 25px;
     padding: 10px ;
@@ -119,7 +119,7 @@
     box-shadow: 0 0 0.5px 0.25px #282c34;
 }
 
-.is-size-1{
+.info{
     color: #27374D;
     font-size: 25px;
     padding: 1px 0 0 0;
