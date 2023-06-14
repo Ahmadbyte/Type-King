@@ -3,25 +3,22 @@ import { useState, useEffect, useRef } from 'react';
 import randomWords from 'random-words';
 import './type.css'
 
-const NUMB_OF_WORDS = 100
+const NUMB_OF_WORDS = 120
 
 function Type() {
 
   const [words, setWords] = useState([])
-
   const [SECONDS, setSECONDS] = useState()
   const [countDown, setCountDown] = useState()
   const [currInput, setCurrInput] = useState("")
   const [currWordIndex, setCurrWordIndex] = useState(0)
   const [currCharIndex, setCurrCharIndex] = useState(-1)
-  const [currChar, setCurrChar] = useState("")
   const [correct, setCorrect] = useState(0)
   const [incorrect, setIncorrect] = useState(0)
   const [status, setStatus] = useState("waiting")
   const textInput = useRef(null)
   const [match, setMatch] = useState(false);
   const [wordCorrect, setWordCorrect] = useState("");
-  // const [timeR,setTimeR] = useState("");
 
   useEffect(() => {
     setWords(generateWords())
@@ -38,7 +35,6 @@ function Type() {
     const timing = document.getElementById('num').value;
     setSECONDS(timing);
     setCountDown(timing);
-    // setTimeR("Time Remaining:")
   };
 
   function generateWords() {
@@ -53,7 +49,6 @@ function Type() {
       setCorrect(0)
       setIncorrect(0)
       setCurrCharIndex(-1)
-      setCurrChar("")
     }
 
     if (status !== 'started') {
@@ -79,7 +74,7 @@ function Type() {
     setCountDown(0);
   };
 
-  function handleKeyDown({ keyCode, key }) {
+  function handleKeyDown({ keyCode }) {
 
     if (keyCode === 32) {
       checkMatch()
@@ -89,10 +84,8 @@ function Type() {
 
     } else if (keyCode === 8) {
       setCurrCharIndex(currCharIndex - 1)
-      setCurrChar("")
     } else {
       setCurrCharIndex(currCharIndex + 1)
-      setCurrChar(key)
     }
   }
 
@@ -109,19 +102,6 @@ function Type() {
       setIncorrect(incorrect + 1);
       setMatch(false);
       setWordCorrect("Incorrect");
-    }
-  }
-  function getCharClass(wordIdx, charIdx, char) {
-    if (wordIdx === currWordIndex && charIdx === currCharIndex && currChar && status !== 'finished') {
-      if (char === currChar) {
-        return 'has-background-success'
-      } else {
-        return 'has-background-danger'
-      }
-    } else if (wordIdx === currWordIndex && currCharIndex >= words[currWordIndex].length) {
-      return 'has-background-danger'
-    } else {
-      return ''
     }
   }
   function keyHighlight(event) {
@@ -179,11 +159,10 @@ function Type() {
             <span key={i} >
               <span >
                 {word.split("").map((char, idx) => (
-                  <span className={getCharClass(i, idx, char)} key={idx} >{char}</span>
+                  <span className={(i, idx, char)} key={idx} >{char}</span>
                 ))}
                 {i === currWordIndex && (
                   <span >
-                    {/* {word} */}
                     <div className='highlight'>
                       {word}
                     </div>
@@ -191,7 +170,6 @@ function Type() {
                 )}
               </span>
               <span> </span>
-
             </span>
           ))}
         </div>

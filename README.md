@@ -3,12 +3,12 @@
 
 => About:- Type King is a React-based typing game where users can test and improve their typing skills. The game presents a series of random words, and the user needs to type them correctly within a specified time limit. This game helps to improve the typing speed of the user it enhances the typing speed. 
 
-## Here is my Github Link for King Type:
+## Here is my Github Link for Type King:
 
 => "https://github.com/Ahmadbyte/Type-King.git" => Time to time making commit and pushed in the repo.
 Created this project and imported every depedencies, Git init then git add . it will add all the file the git commit then made a main branch and then Git push .....This how i pushed my project into Git hub repo.
 
-## Here is my Project Deployed Link for King Type on onrender.com:
+## Here is my Project Deployed Link for Type King on onrender.com:
 
 => Then i deployed my project: {Type King} using {onrender.com}.
 Here first i have added my project into Github as i explained before then i gave permission to onrender.com to read my project Type King repo and then from onrender.com i deployed my project.
