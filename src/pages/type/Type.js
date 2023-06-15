@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import randomWords from 'random-words';
 import './type.css'
 
-const NUMB_OF_WORDS = 120
+const NUMB_OF_WORDS = 110
 
 function Type() {
 
